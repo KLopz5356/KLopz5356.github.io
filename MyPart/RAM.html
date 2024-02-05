@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BIT33 - S-ITWB311</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<style>
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: #132138;
+		}
+
+		.background {
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url(background.jpg);
+		}
+
+		/*Navbar CSS*/
+		.navbar {
+			overflow: hidden;
+			background-color: #132138;
+		}
+
+		.navbar a {
+  			float: left;
+  			font-size: 16px;
+  			color: white;
+  			text-align: center;
+  			padding: 14px 16px;
+  			text-decoration: none;
+		}
+
+		.dropdown {
+  			float: left;
+  			overflow: hidden;
+		}
+
+		.dropdown .dropbtn {
+  			font-size: 16px;  
+  			border: none;
+  			outline: none;
+  			color: white;
+  			padding: 14px 16px;
+  			background-color: inherit;
+  			font-family: inherit;
+  			margin: 0;
+		}
+
+		.navbar a:hover, .dropdown:hover .dropbtn {
+			background-color: #0c121c;
+			color: #32fa00;
+			transition: 0.3s;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #0c121c;
+			min-width: 104px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+		}
+
+		.dropdown-content a {
+			float: none;
+			color: white;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+			font-size: 12px;
+		}
+
+		/*.	dropdown-content a:hover {
+		background-color: #0c121c;
+		} */
+
+		.dropdown:hover .dropdown-content {
+  			display: block;
+		}
+
+		/*Sidenav CSS*/
+		.sidenav {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: #040c1a; /*Main Color*/
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+			text-align: center;
+		}
+
+		.sidenav a {
+			text-decoration: none;
+			font-size: 15px;
+			color: #ffff; /*Text Color*/
+			display: block;
+			transition: 0.5s;
+			text-align: center;
+			font-weight: 600;
+		}
+
+		.sidenav a:hover {
+			color: #132138; /*Di ko alam Color*/
+		}
+
+		.sidenav .closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 50px;
+		}
+
+		/*Sidenav Border*/
+		.sidehome, .sidecase, .sidefans, .sidemobo, .sidecpu, 
+		.sideram, .sidessd,  .sidehdd, .sidepsu, .sidegpu {
+			border: 2px solid white;
+    		border-radius: 20px;
+    		width: 50%;
+    		margin: auto;
+    		padding: 7px 10px 7px 10px;
+		}
+
+		/*Sidenav Content Hover*/
+		.sidehome:hover, .sidecase:hover, .sidefans:hover, .sidemobo:hover, .sidecpu:hover, 
+		.sideram:hover, .sidessd:hover, .sidehdd:hover, .sidepsu:hover, .sidegpu:hover {
+    		background-color: #fff;
+    		transition: 0.5s;
+		}
+
+		#main {
+			transition: margin-left .5s;
+			padding: 16px;
+		}
+
+		@media screen and (max-height: 450px) {
+			.sidenav {padding-top: 15px;}
+			.sidenav a {font-size: 18px;}
+		}
+
+		/*Napakalupit kong Intro*/
+		.intro {
+			background-size: cover;
+			font-family: 'Helvetica', sans-serif;
+			text-align: center;
+		}
+
+		.container {
+			display: inline-block;
+    		font-weight: 600;   
+		}
+
+		.typed-out {
+			overflow: hidden;
+			border-right: .1em solid white;
+			white-space: nowrap;
+			animation: 
+			typing 1s steps(20, end) forwards, blink-caret .75s step-end infinite;
+			font-size: 40px;
+			letter-spacing: 10px;
+		}
+
+		@keyframes typing {
+			from { width: 0 }
+			to { width: 100% }
+		}
+
+		@keyframes blink-caret {
+			from, to { border-color: transparent }
+			50% { border-color: white; }
+		}
+
+		.home {
+			text-align: center;
+			color: white;
+		}
+
+		.classcode {
+			font-size: 70px;
+			letter-spacing: 2px;
+			font-family: Arial Black;
+			line-height: .3vh;
+		}
+
+		/*Justify*/
+		#justify {
+			text-align: justify;
+			text-justify: inter-word;
+		}
+
+		/*Logo*/
+		#logo {
+			text-align: justify;
+		}
+
+		/* Scrollbar */
+		::-webkit-scrollbar {
+    		width: 12px;
+    		display: none;
+		}
+
+		.gputxt1{
+    		text-align: center;
+			color: white;
+    		margin-left: auto;
+    		margin-right: auto;
+    		width: 39em;
+    		font-weight: 600;
+    		font-size: 20px;
+		}
+
+		.gputxt2{
+			text-align: justify;
+			color: white;
+    		margin-left: auto;
+    		margin-right: auto;
+    		width: 50em;
+    		font-weight: 100;
+		}
+
+		.gpuimgs{
+    		border-radius: 25px;
+    		box-shadow: 0px 0px 20px #525252;
+		}
+
+		.step1{
+    		font-size: 30px;
+    		font-weight: 800;
+		}
+
+		.links1{
+    		font-size: 15px;
+    		font-weight: 800;
+    		text-align: center;
+    		color: #32fa00;
+		}
+
+		/*Footer*/
+		footer {
+			position: relative;
+			width: 100vw;
+			color: #fff;
+		}
+		.footer-bottom {
+			width: 100vw;
+			padding: 5px;
+			padding-bottom: 5px;
+			text-align: center;
+		}
+
+		.footer-bottom p {
+			float: left;
+			font-size: 14px;
+			word-spacing: 2px;
+			text-transform: capitalize;
+			margin-left: 20px;
+		}
+
+		.footer-bottom a:hover {
+			color:#fff;
+		}
+
+		.footer-bottom p a {
+			color:#32fa00;
+			font-size: 16px;
+			text-decoration: none;
+		}
+
+		.footer-bottom span {
+			text-transform: uppercase;
+			opacity: .4;
+			font-weight: 200;
+		}
+
+		.footer-menu {
+			float: right;
+			margin-right: 12px;
+		}
+
+		.footer-menu ul {
+			display: flex;
+		}
+
+		.footer-menu ul li {
+			padding-right: 10px;
+			display: block;
+		}
+
+		.footer-menu ul li a {
+			color: #cfd2d6;
+			text-decoration: none;
+		}
+
+		.footer-menu ul li a:hover {
+			color: #32fa00;
+		}
+
+		@media (max-width:500px) {
+			.footer-menu ul{
+				display: flex;
+				margin-top: 10px;
+				margin-bottom: 20px;
+			}
+		}
+	</style>
+
+	<body>
+		<!-- Dropdown -->
+		<div class="background">
+		
+			<div class="navbar">
+				<a style="font-size: 14px; color: #32fa00; cursor: pointer; " onclick="openNav()"><b>&#9776;</b></a>
+					<div class="dropdown">
+						<button class="dropbtn"><b>Overview</b> 
+						</button>
+					<div class="dropdown-content">
+						<a href="History.html">History</a>
+					</div>
+				</div>
+				
+					<div class="dropdown">
+						<button class="dropbtn"><b>About Us</b> 
+						</button>
+					<div class="dropdown-content">
+						<a href="About Us.html">Socials</a>
+					</div>
+				</div>
+			</div>
+		
+		<!-- Sidenav -->
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+			<hr width="40%" size="1" color="#32fa00">
+			<br>
+
+			<div class="sidehome">
+				<a href="Home.html">Home</a>
+			</div>
+
+			<br>
+			<div class="sidecase">
+				<a href="Case.html">Case</a>
+			</div>
+
+			<br>
+			<div class="sidefans">
+				<a href="Fans.html">Fans</a>
+			</div>
+			<br>
+
+			<hr width="40%" size="1" color="#32fa00">
+
+			<br>
+			<div class="sidemobo">
+				<a href="Motherboard.html">Motherboard</a>
+			</div>
+
+			<br>
+			<div class="sidecpu">
+				<a href="CPU.html">CPU</a>
+			</div>
+
+			<br>
+			<div class="sideram">
+				<a href="RAM.html">RAM</a>
+			</div>
+			<br>
+
+			<hr width="40%" size="1" color="#32fa00">
+
+			<br>
+			<div class="sidessd">
+				<a href="SSD.html">SSD</a>
+			</div>
+			
+			<br>
+			<div class="sidehdd">
+				<a href="HDD.html">HDD</a>
+			</div>
+
+			<br>
+			<div class="sidepsu">
+				<a href="PSU.html">PSU</a>
+			</div>
+
+			<br>
+			<div class="sidegpu">
+				<a href="GPU.html">GPU</a>
+			</div>
+			
+			<br>
+			<hr width="40%" size="1" color="#32fa00">
+			<br><br><br><br><br><br><br><br>
+
+		</div>
+	
+	<!-- Content -->
+		<br><br><br><br><br><br><br><br>
+		<div class="home">
+				<div class="container">
+					<div class="typed-out">HOW TO INSTALL RAM IN YOUR PC</div>
+                    <br><br>
+                    <hr width="70%" size="1" color="#32fa00">
+			    </div>
+                <br> <br>   
+            <br>
+		</div>     
+        <div class="gputxt1"> 
+            <img class="gpuimgs" src="ram1.jpg" height="470" width="740">
+            <br><br>
+            <hr width="70%" size="1" color="#32fa00">
+		</div>
+		<div class="gputxt2">
+            <p> Learning how to add RAM is an excellent solution to speed up your computer if you're wanting to do so. Most operating systems are memory hogs, but if you have a recent computer or laptop, you generally won't notice much of a difference in how quickly you can browse the web. However, older computers are a different matter.
+
+			<br> <br>
+			Luckily, installing RAM is quite simple because it's a crucial component of your computer. At least when it comes to installing PC components, it doesn't get any easier than this. You should be able to pick it up quite fast even if you have never done it before.
+            </p>  
+            <br><br><br><br>
+        </div>
+        
+        <div class="gputxt1">
+            <p class="step1">STEP 1: READ YOUR MOTHERBOARD MANUAL</p>
+            <iframe width="740" height="460" src="https://www.youtube.com/embed/Cs8I4-jmUJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+		</div>
+		<div class="gputxt2">
+			 <p>When it comes to installing a RAM, you shouldn't be hasty about jamming it into any available slots on your motherboard, considering how simple it is to pop RAM sticks in there. 
+	  		After all, you want to make sure the RAM is in the right slots so you can get the most performance out of it.</p>
+	  		<p>When your computer has many RAM sticks, using it in dual- or quad-channel modes will enhance performance. To do this, you must use the appropriate RAM slots.You may find out which of your 
+	  		slots are connected in this way by consulting your motherboard's instructions, but to make things simpler, they are often all constructed of the same color plastic. The slots indicated in the next step will be used to install dual-channel RAM.</p>
+            <br>
+            <hr width="70%" size="1" color="#32fa00">   
+        </div>
+
+        <div class="gputxt1">
+            
+            <p class="step1">STEP 2: OPEN YOUR RAM SLOTS</p>
+            <img class="gpuimgs"src="ram2.png" height="400" width="740">
+		</div>
+		<div class="gputxt2">
+			 <p>Once you've determined where your RAMS should go, you may begin installing now. There will be two small clips on either side of each RAM slot. Press these down to open them. Use moderate power,they don't need to move too far.</p>
+	  		<p>You might only need to perform this at one end of your RAM slot in some circumstances. Older form factors, such DDR3, open at both ends, but DDR4 memory frequently only has one tab that may be moved.</p>
+                <br><hr width="70%" size="1" color="#32fa00">   
+        </div>
+
+        <div class="gputxt1">
+
+            <p class="step1">STEP 3: LINE UP YOUR RAM</p>
+	        <img class="gpuimgs" src="ram3.png" height="400" width="730">
+		</div>
+		<div class="gputxt2">
+			<p>RAM sticks are keyed, which means they have a gap in the connection that ensures you can only enter them one way. Align your RAM such that the gap on the connector matches to the RAM slot.</p>
+                <br><hr width="70%" size="1" color="#32fa00">   
+        </div>
+
+        <div class="gputxt1">
+
+            <p class="step1">STEP 4: INSERT THE RAM</p>
+            <img  class="gpuimgs" src="ram4.png" height="400" width="740">
+		</div>
+		<div class="gputxt2">
+			<p>When your RAM is properly aligned, slide it into its slot. If your RAM slot only has one open tab, place the RAM first into the end that isn't open. If your DIMM slot has two open tabs, you must install the RAM equally.</p>
+	  		<p>Once your RAM is in the slot, press down on both ends of it until you hear/feel a click and see the tab(s) shut to secure it. New motherboards are sometimes fairly rigid, and you may need to apply some pressure to achieve this. 
+	  		If your motherboard flexes or the RAM slot slides, pause and double-check that you did the previous procedures correctly.</p>
+
+                <br><hr width="70%" size="1" color="#32fa00">   
+        </div>
+
+        <div class="gputxt1">
+
+            <p class="step1">FULL VIDEO TUTORIAL <br> ON HOW TO INSTALL RAM</p>
+			<iframe width="740" height="420" src="https://www.youtube.com/embed/Yy_akHHhF_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+                <br><br> <br><br>
+        </div>
+
+		<div id="justify" style="padding:15px 15px 0px; color:white; font-size:10px; margin-top:10px;">
+		</div>
+	</div>
+
+	<footer>
+		<div class="footer-bottom">
+		<p>copyright &copy; <a href="#">BIT33 - ITWB311</a></p>
+			<div class="footer-menu">
+				<ul class="f-menu">
+					<li><a href="Home.html">Home</a></li>
+					<li><a href="About Us.html">About Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		var prevScrollpos = window.pageYOffset;
+
+		window.onscroll = function() {
+			var currentScrollPos = window.pageYOffset;
+				if (prevScrollpos > currentScrollPos) {
+					document.getElementById("navbar").style.top = "0";
+					}
+					else {
+						document.getElementById("navbar").style.top = "-50px";
+					}
+					prevScrollpos = currentScrollPos;
+		}
+
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+			document.getElementById("main").style.marginLeft = "250px";
+			document.body.style.backgroundColor = "rgba(0,0,0,0.4)"; /*Opacity Color*/
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginLeft= "0";
+			document.body.style.backgroundColor = "white";
+		}
+		
+		function reveal() {
+			var reveals = document.querySelectorAll(".reveal");
+			
+			for (var i = 0; i < reveals.length; i++) {
+				var windowHeight = window.innerHeight;
+				var elementTop = reveals[i].getBoundingClientRect().top;
+				var elementVisible = 150;
+			
+				if (elementTop < windowHeight - elementVisible) {
+					reveals[i].classList.add("active")
+					}
+					else {
+					reveals[i].classList.remove("active");
+					}
+			}
+		}
+
+		window.addEventListener("scroll", reveal);
+		
+	</script>
+</body>
+</html>

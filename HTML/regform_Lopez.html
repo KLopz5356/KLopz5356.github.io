@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> RegForm_Lopez </title>
+<style>
+div 
+	{
+		margin-bottom: 10px;
+	}
+label	
+	{
+		display: inline-block;
+		width: 150px;
+		color: green;
+		font-family: franklin gothic;
+	}
+fieldset
+	{
+		background: transparent;
+		width: 350px;
+	}
+legend
+	{
+		padding: 20px 1;
+		font-size: 20px;
+		color: gray;
+		font-family: verdana;
+		
+	}
+output
+	{
+		color: black;
+	}
+h1	
+	{
+		color: green;
+		font-family: helvetica;
+		
+	}
+</style>
+</head>
+
+<body background="bg4.jpg">
+
+<h1>REGISTRATION FORM</h1>
+
+	<form>
+		<fieldset>
+			<legend>Personal Information</legend>
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" placeholder="Type Here" id="name">
+		</div>
+		<div>
+			<label for="course">Course:</label>
+			<select name="list" id="list" width=100px>
+			<option></option>
+			<option value="BSIT">BSIT</option>
+			<option value="BSCS">BSCS</option>
+			<option value="BSIS">BSIS</option>
+			</select>
+		</div>
+		<div>
+			<label for="date">Date of birth:</label>
+			<input type="date" id="date">
+		</div>
+		<div>
+			<label for="age">Age:</label>
+			<input type="number" placeholder="Type Here" id="age">
+		</div>
+		<div>
+			<label for="con">Contact Number:</label>
+			<input type="number" placeholder="Type Here" id="con">
+		</div>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Gender</legend>
+		<div>
+			<input type="radio" placeholder="Male" name="Gender" required> <label>Male</label><br>
+			<input type="radio" placeholder="Female" name="Gender" required> <label>Female</label><br>
+			<input type="radio" placeholder="Other" name="Gender" required> <label>Other</label>
+		</div>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Address</legend>
+		<div>
+			<label> Country: </label>
+			<select>
+			<optgroup label="Asia"> Asia
+			<option value=Australia>Australia
+			<option value=China>China
+			<option value=Japan>Japan
+			<option value=Philippines>Philippines
+			<option value=Singapore>Singapore
+			<optgroup label="Europe">Europe
+			<option value=Argentina>Argentina
+			<option value=Belgium>Belgium
+			<option value=France>France
+			<option value=Italy>Italy
+			<option value=Ukraine>Ukraine
+			</optgroup>
+			</select>
+			</div>
+			<div>
+			<label for="add">Address:</label>
+			<input type="text" placeholder="Type Here" id="age">
+		</div>
+		<div>
+			<label for="city">City:</label>
+			<input type="text" placeholder="Type Here" id="con">
+		</div>
+		<div>
+			<label for="prov">Province:</label>
+			<input type="text" placeholder="Type Here" id="age">
+		</div>
+		<div>
+			<label for="zip">Zip Code:</label>
+			<input type="text" placeholder="Type Here" id="con">
+		</div>
+		</fieldset>
+		
+		<br><input type="submit">
+	</form>
+</body>
+
+
+
+
+
+
+
+
+
+</html>
